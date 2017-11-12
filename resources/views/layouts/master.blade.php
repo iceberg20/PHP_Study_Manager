@@ -38,7 +38,7 @@
 
     <header>
       <div class="blog-masthead">
-        @include('layouts.navbar')
+       
       </div>
     </header>
 

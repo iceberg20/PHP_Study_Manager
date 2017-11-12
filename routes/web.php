@@ -18,8 +18,19 @@ Route::get('/studysection', 'StudySectionController@index');
 Route::get('/studysection/create', 'StudySectionController@create');
 Route::post('/studysections', 'StudySectionController@store');
 Route::get('/studysection/{studysection}', 'StudySectionController@show');
-Route::get('/config', 'Config@index');
 Route::post('/studysection/{studysection}/goals','GoalsController@store');
-Auth::routes();
+
+Route::get('/config', 'Config@index');
+
+//Auth::routes();
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/register', 'RegistrationController@create');
+Route::post('/register', 'RegistrationController@store');
+
+Route::get('/login','SessionsController@create');
+Route::get('/logout','SessionsController@destroy');
+

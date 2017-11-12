@@ -15,4 +15,8 @@ class Studysection extends Model
     public function addGoal($name){
     	$this->goals()->create(compact('name'));
     }
+
+    public function user(){
+    	return $this->belongsTo(User::class);	
+    }
 }

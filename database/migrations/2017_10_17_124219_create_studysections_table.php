@@ -15,6 +15,7 @@ class CreateStudysectionsTable extends Migration
     {
         Schema::create('studysections', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->string('subject');
             $table->string('description');
             $table->date('s_date');

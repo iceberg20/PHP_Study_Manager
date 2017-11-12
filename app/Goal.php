@@ -11,4 +11,8 @@ class Goal extends Model
 	public function studysection(){
 		return $this->belongsToMany(Studysection::class);
 	}
+	
+    public function user(){
+    	return $this->belongsTo(User::class);	
+    }
 }
