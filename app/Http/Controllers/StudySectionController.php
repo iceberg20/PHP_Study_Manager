@@ -7,6 +7,10 @@ use App\Studysection;
 
 class StudySectionController extends Controller
 {
+    public function __contruct(){
+        $this->midware('auth')->except(['index','show']);
+    }
+
     public function index(){
     	$s_sections = Studysection::latest()->get();
 
@@ -28,10 +32,16 @@ class StudySectionController extends Controller
             'subject' => 'required',
             'description' => 'required',
             'minutes' => 'required',
-            's_date' => 'required'  
-
+            's_date' => 'required'
             ]);
-        Studysection::create(request(['subject', 'description','minutes', 's_date' ]));
+
+        Studysection::create(['subject' => request('subject'), 
+                              'description' => request('description'),
+                                     'minutes' => request('minutes'), 
+                                     's_date' => request('s_date'),
+                                     'user_id' => auth()->user()->id
+                                     ]);
+
 
         return redirect('/studysection');
     }

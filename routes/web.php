@@ -22,15 +22,16 @@ Route::post('/studysection/{studysection}/goals','GoalsController@store');
 
 Route::get('/config', 'Config@index');
 
-//Auth::routes();
+Auth::routes();
 
 
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/register', 'RegistrationController@create');
-Route::post('/register', 'RegistrationController@store');
+//Route::get('/register', 'RegistrationController@create');
+//Route::post('/register', 'RegistrationController@store')->name('register');
 
-Route::get('/login','SessionsController@create');
-Route::get('/logout','SessionsController@destroy');
+//Route::get('/login','SessionsController@create')->name('login');
+//Route::post('/login','SessionsController@create')->name('login');
+//Route::post('/logout','SessionsController@destroy')->name('logout');
 

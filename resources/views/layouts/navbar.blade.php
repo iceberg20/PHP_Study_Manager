@@ -4,7 +4,7 @@
       <a class="nav-link" href="/studysection/create">Create</a>
       <a class="nav-link" href="/config">Config</a>
       <a class="nav-link" href="/">About Laravel</a>
-      <form class="form-inline my-2 my-lg-0" action="{{ route('logout') }}" method="POST">
+      <form class="form-inline my-2 my-lg-0 ml-auto" action="{{ route('logout') }}" method="POST">
       @guest
         <a class="nav-link" href="{{ route('login') }}">Login</a>
         <a class="nav-link" href="{{ route('register') }}">Register</a>
