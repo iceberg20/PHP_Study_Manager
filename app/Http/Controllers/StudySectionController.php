@@ -8,8 +8,8 @@ use Auth;
 
 class StudySectionController extends Controller
 {
-    public function __contruct(){
-        $this->midware('auth')->except(['index','show']);
+    public function __construct(){
+        $this->middleware('auth');
     }
 
     public function index(){
