@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Studysection extends Model
 {
-    protected $fillable = ['subject', 'description','minutes', 's_date'];
+    protected $fillable = ['subject', 'description','minutes', 's_date', 'user_id'];
 
     public function goals(){
     	return $this->hasMany(Goal::class);

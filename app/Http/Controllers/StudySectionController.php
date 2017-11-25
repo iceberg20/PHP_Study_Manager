@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Studysection;
+use Auth;
 
 class StudySectionController extends Controller
 {
@@ -12,7 +13,9 @@ class StudySectionController extends Controller
     }
 
     public function index(){
-    	$s_sections = Studysection::latest()->get();
+        $id = auth()->id();
+        $s_sections =Studysection::where('id', $id )->get();
+    	//$s_sections = Studysection::latest()->get();
 
     	return view('studysection.index', compact('s_sections'));
     }
@@ -39,7 +42,7 @@ class StudySectionController extends Controller
                               'description' => request('description'),
                                      'minutes' => request('minutes'), 
                                      's_date' => request('s_date'),
-                                     'user_id' => auth()->user()->id
+                                     'user_id' => auth()->id()
                                      ]);
 
 
