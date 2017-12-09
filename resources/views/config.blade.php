@@ -2,8 +2,19 @@
 
 @section('content')
 
+<h1> {{ $test }} </h1>
+
+@if(true)
+	<div class="alert alert-success">
+	  <strong>Success!</strong> Indicates a successful or positive action.
+	</div>
+@endif
+
+
 
 <h2> Daily goal </h2>
+
+
 
 <form method="POST" action="/config/set_daily_goal">
     {{ csrf_field() }}

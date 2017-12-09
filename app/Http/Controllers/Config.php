@@ -17,7 +17,8 @@ class Config extends Controller
         $user = User::where('id',$id)->first();
         $user->daily_goal = request('hours');
         $user->save();
-        return view('config');
+     
+        return view('config')->whith("added","oi");
     }
 
     public function index()
